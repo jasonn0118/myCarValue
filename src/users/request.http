@@ -8,14 +8,14 @@ Content-Type: application/json
 }
 
 ### Find a user
-GET http://localhost:3000/auth/132
+GET http://localhost:3000/auth/2
 
 
 ### Find by email
-GET http://localhost:3000/auth?email=test1@test.com
+GET http://localhost:3000/auth?email=test@test.com
 
 ### Update a user
-PATCH http://localhost:3000/auth/2422
+PATCH http://localhost:3000/auth/2
 Content-Type: application/json
 
 {
