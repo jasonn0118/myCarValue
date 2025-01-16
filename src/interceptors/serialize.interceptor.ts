@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { plainToClass } from 'class-transformer';
+import { plainToInstance } from 'class-transformer';
 
 // Minimum interface for a class constructor
 interface ClassConstructor {
@@ -26,7 +26,7 @@ export class SerializeInterceptor implements NestInterceptor {
 
     return next.handle().pipe(
       map((data: any) => {
-        return plainToClass(this.dto, data, {
+        return plainToInstance(this.dto, data, {
           excludeExtraneousValues: true,
         });
       }),
