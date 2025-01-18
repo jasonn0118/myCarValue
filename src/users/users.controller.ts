@@ -22,7 +22,7 @@ import { User } from './user.entity';
 import { AuthGuard } from 'src/guards/auth.guard';
 
 // Controller-wide serialization
-// @Serialize(UserDto)
+@Serialize(UserDto)
 @Controller('auth')
 export class UsersController {
   constructor(
@@ -31,7 +31,7 @@ export class UsersController {
   ) {}
 
   @Get('/whoami')
-  //   @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard)
   whoAmI(@CurrentUser() user: User) {
     return user;
   }
